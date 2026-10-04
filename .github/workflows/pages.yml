@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main, claude/eloquent-faraday-0u0oth]
+    branches: [claude/eloquent-faraday-0u0oth]
   workflow_dispatch:
 
 permissions:
