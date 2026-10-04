@@ -80,7 +80,7 @@
   p("potato-kugel", "Potato Kugel", "ready-meals", 89.9, "each", "~800g", "kugel", P, ["Shabbos", "Pesach", "Pareve"], "Crisp-topped, golden potato kugel with a soft, savoury middle that disappears fast.", { pesach: true });
   p("lokshen-kugel", "Lokshen Kugel (Sweet)", "ready-meals", 94.9, "each", "~800g", "kugel", P, ["Shabbos", "Pareve"], "Sweet, cinnamon-kissed noodle kugel with a caramelised, crunchy top.");
   p("chicken-potjie-meal", "Chicken Potjie Meal", "ready-meals", 119.9, "each", "serves 2", "roast-chicken", M, ["Mehadrin", "Glatt", "Ready to Eat"], "Tender chicken and vegetables in a rich potjie gravy, heat and serve in minutes.");
-  p("beef-bobotie-meal", "Beef Bobotie", "ready-meals", 109.9, "each", "serves 2", "mince", M, ["Mehadrin", "Glatt", "Cape Malay"], "A kosher take on the Cape classic: spiced mince, apricot and a golden egg-free custard topping.");
+  p("beef-bobotie-meal", "Beef Bobotie", "ready-meals", 109.9, "each", "serves 2", "mince", M, ["Mehadrin", "Glatt", "Cape Malay"], "A kosher take on the Cape classic: spiced mince, apricot and a golden savoury egg-style topping.");
   p("tzimmes", "Carrot Tzimmes", "ready-meals", 69.9, "each", "~500g", "kugel", P, ["Shabbos", "Pesach", "Pareve"], "Honeyed carrots and prunes, slow-cooked until sticky, sweet and glossy.", { pesach: true });
   p("meat-blintzes", "Meat Blintzes", "ready-meals", 139.9, "each", "8 pcs", "schnitzel", M, ["Mehadrin", "Glatt"], "Delicate crepes rolled around seasoned beef and pan-fried until lightly golden.");
 
