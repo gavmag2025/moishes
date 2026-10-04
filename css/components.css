@@ -377,3 +377,4 @@
 /* fixes: narrow cards + chip snapping */
 .product-card__actions .btn { white-space: normal; padding-inline: .6rem; }
 .chips { scroll-padding-inline: var(--gutter); }
+.slot-fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
