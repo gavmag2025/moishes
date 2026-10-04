@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 92" width="330" height="92" role="img" aria-labelledby="t">
+<title id="t">Moishes Kosher Butchery &amp; Deli</title>
+<style>
+.ink{fill:#6B1B2A}.sub{fill:#3A3330}.brass{fill:#B8862B}.badge{fill:#6B1B2A}.mark{fill:#FBF3E2}.ring{stroke:#D9A441}
+@media (prefers-color-scheme:dark){.ink{fill:#F3E6CF}.sub{fill:#D9CDB8}.brass{fill:#E0AE55}.badge{fill:#8E2A3C}.mark{fill:#FFF6E4}.ring{stroke:#E0AE55}}
+</style>
+<g>
+<rect class="badge" x="4" y="8" width="76" height="76" rx="20"/>
+<rect x="9" y="13" width="66" height="66" rx="16" fill="none" class="ring" stroke-width="1.6"/>
+<path class="mark" d="M22 66V32.5c0-1.5 1.7-2.2 2.8-1.2L42 46.800 59.200 31.300c1.100-1 2.800-.3 2.800 1.200V66h-7.500V47.500L44.500 56.500c-1.400 1.200-3.600 1.200-5 0L29.500 47.500V66z"/>
+<circle class="brass" cx="42" cy="22" r="3.2" style="fill:#D9A441"/>
+</g>
+<text class="ink" x="94" y="52" font-family="Fraunces,'Playfair Display','Iowan Old Style','Palatino Linotype',Georgia,serif" font-size="46" font-weight="700" letter-spacing="-0.5">Moishes</text>
+<path class="brass" d="M96 61h226v1.600H96z"/>
+<text class="sub" x="96" y="79" font-family="Inter,'DM Sans','Segoe UI',Arial,sans-serif" font-size="13.500" font-weight="600" letter-spacing="2.600">KOSHER BUTCHERY &amp; DELI</text>
+</svg>

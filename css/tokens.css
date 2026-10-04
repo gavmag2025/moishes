@@ -1,0 +1,141 @@
+/* ==========================================================================
+   Moishes Kosher Butchery & Deli - design tokens
+   Palette: pomegranate burgundy, parchment cream, brass, charcoal, herb green.
+   Light is default; dark follows prefers-color-scheme, and can be forced with
+   <html data-theme="light|dark">.
+   ========================================================================== */
+:root {
+  /* brand */
+  --burgundy-900: #4A1220;
+  --burgundy-800: #5C1624;
+  --burgundy-700: #6B1B2A;   /* primary */
+  --burgundy-600: #86233A;
+  --burgundy-500: #A12D47;
+  --burgundy-100: #F6E1E4;
+  --brass-700: #7A5410;      /* brass as TEXT on cream (AA) */
+  --brass-600: #9C6F1B;
+  --brass-500: #B8862B;      /* brass as DECORATION */
+  --brass-400: #D9A441;
+  --brass-200: #F1DDB0;
+  --herb-700: #26593A;
+  --herb-600: #2F6B3A;
+  --herb-100: #E3EFDC;
+  --char-900: #2B2522;
+  --char-700: #4A403B;
+  --char-500: #6E625B;
+
+  /* semantic - light */
+  --bg: #FBF5E9;
+  --bg-alt: #F5EBD6;
+  --surface: #FFFDF8;
+  --surface-2: #F8F0DF;
+  --ink: var(--char-900);
+  --ink-2: #5A4E48;          /* 7.0:1 on --bg */
+  --ink-inverse: #FFF8EA;
+  --line: #E6D8BE;
+  --line-strong: #CDB98F;
+  --primary: var(--burgundy-700);
+  --primary-hover: var(--burgundy-600);
+  --primary-ink: #FFF8EA;
+  --primary-text: var(--burgundy-700); /* primary used as TEXT colour */
+  --primary-soft: var(--burgundy-100);
+  --accent: var(--brass-500);
+  --accent-ink: var(--brass-700);
+  --accent-soft: var(--brass-200);
+  --pareve: var(--herb-600);
+  --pareve-bg: var(--herb-100);
+  --meat: var(--burgundy-700);
+  --meat-bg: var(--burgundy-100);
+  --success: #2F6B3A;
+  --warn-bg: #FBE9BE;
+  --warn-ink: #5C3F06;
+  --danger: #A3202E;
+  --focus: #1F5FBF;
+  --overlay: rgba(36, 22, 24, .55);
+  --announce-bg: var(--burgundy-800);
+  --announce-ink: #FBEFD6;
+  --footer-bg: #2B1A1E;
+  --footer-ink: #EBDDC4;
+  --footer-ink-2: #C4B49A;
+  --skeleton-a: #EFE3CB;
+  --skeleton-b: #F8F0DF;
+
+  /* geometric border motif (fine lattice, neutral) */
+  --motif: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='12' viewBox='0 0 24 12'%3E%3Cpath d='M0 6 6 0l6 6-6 6zM12 6l6-6 6 6-6 6z' fill='none' stroke='%23B8862B' stroke-width='1'/%3E%3Cpath d='M6 6 9 3l3 3-3 3zM18 6l3-3 3 3-3 3z' fill='%23B8862B' opacity='.55'/%3E%3C/svg%3E");
+  --pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M24 4 44 24 24 44 4 24z' fill='none' stroke='%23B8862B' stroke-opacity='.16' stroke-width='1'/%3E%3Ccircle cx='24' cy='24' r='2' fill='%23B8862B' fill-opacity='.16'/%3E%3C/svg%3E");
+
+  /* type */
+  --font-display: "Fraunces", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+  --font-body: "DM Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-hebrew: "Frank Ruhl Libre", "David", "Times New Roman", serif;
+  --fs-xs: .8125rem;  --fs-sm: .9375rem;  --fs-base: 1.0625rem;
+  --fs-md: 1.1875rem; --fs-lg: clamp(1.3rem, 1.1rem + 1vw, 1.65rem);
+  --fs-xl: clamp(1.7rem, 1.3rem + 2vw, 2.4rem);
+  --fs-2xl: clamp(2.2rem, 1.5rem + 3.6vw, 3.8rem);
+  --lh-tight: 1.15; --lh-body: 1.55;
+
+  /* space (4px base) */
+  --s-1: .25rem; --s-2: .5rem; --s-3: .75rem; --s-4: 1rem; --s-5: 1.5rem;
+  --s-6: 2rem; --s-7: 3rem; --s-8: 4.5rem;
+  --gutter: 1rem;
+  --container: 76rem;
+
+  /* shape + depth */
+  --r-sm: 8px; --r-md: 14px; --r-lg: 22px; --r-pill: 999px;
+  --shadow-1: 0 1px 2px rgba(60, 30, 20, .08), 0 2px 8px rgba(60, 30, 20, .06);
+  --shadow-2: 0 4px 12px rgba(60, 30, 20, .10), 0 14px 32px rgba(60, 30, 20, .10);
+  --shadow-3: 0 10px 30px rgba(40, 14, 20, .28);
+
+  /* motion */
+  --ease: cubic-bezier(.2, .7, .2, 1);
+  --t-fast: 140ms; --t-med: 260ms;
+
+  /* sizing */
+  --tap: 44px;
+  --header-h: 64px;
+  --z-header: 50; --z-drawer: 80; --z-toast: 100;
+
+  color-scheme: light;
+}
+
+@media (min-width: 40em) { :root { --gutter: 1.5rem; --header-h: 72px; } }
+@media (min-width: 64em) { :root { --gutter: 2rem; } }
+
+/* ---- dark mode ---- */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1A1315; --bg-alt: #211819; --surface: #261C1F; --surface-2: #2F2326;
+    --ink: #F4EADA; --ink-2: #CDBFAE; --ink-inverse: #1A1315;
+    --line: #3F3135; --line-strong: #5A474C;
+    --primary: #B8344F; --primary-hover: #CC4660; --primary-ink: #FFF8EA; --primary-text: #E68497;
+    --primary-soft: #3A1B25;
+    --accent: #E0AE55; --accent-ink: #EBC272; --accent-soft: #3B2E17;
+    --pareve: #8FCB8F; --pareve-bg: #1F3322;
+    --meat: #F0A3B1; --meat-bg: #3A1B25;
+    --success: #8FCB8F; --warn-bg: #3B2E17; --warn-ink: #F2D79A; --danger: #FF8A94;
+    --focus: #8DB8FF; --overlay: rgba(0, 0, 0, .65);
+    --announce-bg: #3A1520; --announce-ink: #F6E7C8;
+    --footer-bg: #130D0F;
+    --skeleton-a: #2B2023; --skeleton-b: #372A2D;
+    --shadow-1: 0 1px 2px rgba(0,0,0,.4); --shadow-2: 0 6px 20px rgba(0,0,0,.45);
+    --pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M24 4 44 24 24 44 4 24z' fill='none' stroke='%23E0AE55' stroke-opacity='.12' stroke-width='1'/%3E%3Ccircle cx='24' cy='24' r='2' fill='%23E0AE55' fill-opacity='.12'/%3E%3C/svg%3E");
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1A1315; --bg-alt: #211819; --surface: #261C1F; --surface-2: #2F2326;
+  --ink: #F4EADA; --ink-2: #CDBFAE; --ink-inverse: #1A1315;
+  --line: #3F3135; --line-strong: #5A474C;
+  --primary: #B8344F; --primary-hover: #CC4660; --primary-ink: #FFF8EA; --primary-text: #E68497;
+  --primary-soft: #3A1B25;
+  --accent: #E0AE55; --accent-ink: #EBC272; --accent-soft: #3B2E17;
+  --pareve: #8FCB8F; --pareve-bg: #1F3322;
+  --meat: #F0A3B1; --meat-bg: #3A1B25;
+  --success: #8FCB8F; --warn-bg: #3B2E17; --warn-ink: #F2D79A; --danger: #FF8A94;
+  --focus: #8DB8FF; --overlay: rgba(0, 0, 0, .65);
+  --announce-bg: #3A1520; --announce-ink: #F6E7C8;
+  --footer-bg: #130D0F;
+  --skeleton-a: #2B2023; --skeleton-b: #372A2D;
+  --shadow-1: 0 1px 2px rgba(0,0,0,.4); --shadow-2: 0 6px 20px rgba(0,0,0,.45);
+  color-scheme: dark;
+}

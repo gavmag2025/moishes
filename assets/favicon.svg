@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+<title>Moishes</title>
+<rect width="64" height="64" rx="16" fill="#6B1B2A"/>
+<rect x="4.500" y="4.500" width="55" height="55" rx="12" fill="none" stroke="#D9A441" stroke-width="1.500"/>
+<path fill="#FBF3E2" d="M15 49V23.500c0-1.400 1.600-2 2.600-1.100L32 34.500l14.400-12.100c1-.9 2.600-.3 2.600 1.100V49h-6.500V36.800l-8.800 7.500c-1.300 1.100-3.200 1.100-4.500 0l-8.800-7.500V49z"/>
+<circle cx="32" cy="14.500" r="2.800" fill="#D9A441"/>
+</svg>
