@@ -1,5 +1,7 @@
 # Moishes Online (demo)
 
+**Live demo:** https://gavmag2025.github.io/moishes/
+
 A free, static e-commerce demo for a Johannesburg kosher butchery and deli: browse by category, add weighted
 cuts or packs to a cart, pick delivery or collection, and send the order by WhatsApp. It is built to show the
 shop what online ordering could look like.
