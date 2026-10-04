@@ -5,7 +5,16 @@
   var page = (doc.body && doc.body.getAttribute("data-page")) || "";
 
   function icon(id, cls) { return '<svg class="icon' + (cls ? " " + cls : "") + '" aria-hidden="true"><use href="assets/icons.svg#' + id + '"/></svg>'; }
-  function art(p) { return "assets/art/" + encodeURIComponent(p.art || "generic-meat") + ".svg"; }
+  var PHOTOS = "beef-ribs biltong boerewors brisket burger cake-layer catering-platter challah chicken-pieces chicken-soup chicken-whole chicken-wings chocolate-cake cholent droewors hummus kugel lamb-chops lamb-ribs mince pastrami roast-beef roast-chicken rolls rugelach salad salami sausage schnitzel shabbos-box steak stew turkey".split(" ");
+  function art(p) { var k = p.art || "generic-meat"; return PHOTOS.indexOf(k) < 0 ? "assets/art/" + encodeURIComponent(k) + ".svg" : "assets/photos/" + encodeURIComponent(k) + ".jpg"; }
+  root.MoishesPhotoKeys = PHOTOS;
+  /* Photos fall back to the original SVG illustration if a file is missing (error events do not bubble, so capture). */
+  doc.addEventListener("error", function (e) {
+    var t = e.target;
+    if (!t || t.tagName !== "IMG" || t.getAttribute("data-fb")) return;
+    var m = /assets\/photos\/([^\/?#]+)\.jpg/.exec(t.getAttribute("src") || "");
+    if (m) { t.setAttribute("data-fb", "1"); t.src = "assets/art/" + m[1] + ".svg"; }
+  }, true);
   function $(s, r) { return (r || doc).querySelector(s); }
   function $$(s, r) { return Array.prototype.slice.call((r || doc).querySelectorAll(s)); }
   function now() { return new Date(); }
@@ -180,7 +189,7 @@
     return '<footer class="site-footer"><span class="motif-bar" aria-hidden="true"></span><div class="container"><div class="footer-grid">' +
       '<div class="footer-brand"><img src="assets/logo-light.svg" alt="Moishes Kosher Butchery &amp; Deli" width="330" height="92"><p class="footer-muted">' + esc(s.address) + '</p><p class="footer-muted"><a href="tel:' + esc(s.phoneTel) + '">' + esc(s.phoneDisplay) + "</a></p></div>" +
       '<div><h2 class="footer-title">Shop</h2><ul class="footer-links"><li><a href="shop.html">All products</a></li><li><a href="shop.html?cat=shabbos-packs">Shabbos packs</a></li><li><a href="shop.html?cat=bakery">Challah &amp; bakery</a></li><li><a href="cart.html">Basket</a></li></ul></div>' +
-      '<div><h2 class="footer-title">Information</h2><ul class="footer-links"><li><a href="kashrut.html">Kashrut</a></li><li><a href="about.html">About &amp; hours</a></li><li><a href="contact.html">Contact</a></li><li><a href="orders.html">My orders</a></li></ul></div>' +
+      '<div><h2 class="footer-title">Information</h2><ul class="footer-links"><li><a href="kashrut.html">Kashrut</a></li><li><a href="about.html">About &amp; hours</a></li><li><a href="contact.html">Contact</a></li><li><a href="orders.html">My orders</a></li><li><a href="about.html#photo-credits">Photo credits</a></li></ul></div>' +
       '<div><h2 class="footer-title">Order</h2><ul class="footer-links"><li><a href="https://wa.me/' + esc(s.whatsapp) + '" rel="noopener">WhatsApp</a></li><li><a href="checkout.html">Checkout</a></li></ul></div></div>' +
       '<div class="footer-legal"><span>&copy; 2026 Moishes Kosher Butchery &amp; Deli</span><span class="demo-note">Demo site - dummy products and prices</span></div></div></footer>' +
       '<div class="toast-region" aria-live="polite" aria-atomic="false"></div>';

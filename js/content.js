@@ -24,7 +24,7 @@
   function categoriesHTML() {
     var counts = C.counts();
     return C.categories.filter(function (c) { return counts[c.id]; }).map(function (c) {
-      return '<li><a class="cat-tile" href="shop.html?cat=' + encodeURIComponent(c.id) + '"><img class="cat-tile__art" src="assets/art/' + c.art + '.svg" alt="" loading="lazy"><span class="cat-tile__body"><span class="cat-tile__name">' + esc(c.label) + '</span><span class="cat-tile__count">' + counts[c.id] + (counts[c.id] === 1 ? " item" : " items") + "</span></span></a></li>";
+      return '<li><a class="cat-tile" href="shop.html?cat=' + encodeURIComponent(c.id) + '"><img class="cat-tile__art" src="' + (root.MoishesPhotoKeys && root.MoishesPhotoKeys.indexOf(c.art) >= 0 ? "assets/photos/" + c.art + ".jpg" : "assets/art/" + c.art + ".svg") + '" alt="" loading="lazy"><span class="cat-tile__body"><span class="cat-tile__name">' + esc(c.label) + '</span><span class="cat-tile__count">' + counts[c.id] + (counts[c.id] === 1 ? " item" : " items") + "</span></span></a></li>";
     }).join("");
   }
   function featuredHTML(limit) {

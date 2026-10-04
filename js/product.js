@@ -19,9 +19,9 @@
   var cat = C.category(p.category);
   doc.title = p.name + " - Moishes Kosher Butchery & Deli";
   var desc = doc.querySelector('meta[name="description"]'); if (desc) desc.content = p.name + ": " + p.desc + " " + money(p.price) + (p.unit === "kg" ? " per kg" : "") + ". Kosher " + p.kosher.toLowerCase() + ".";
-  [["og:title", doc.title], ["og:description", p.desc], ["og:image", "assets/art/" + p.art + ".svg"]].forEach(function (x) { var m = doc.querySelector('meta[property="' + x[0] + '"]'); if (m) m.content = x[1]; });
+  [["og:title", doc.title], ["og:description", p.desc], ["og:image", UI.art(p)]].forEach(function (x) { var m = doc.querySelector('meta[property="' + x[0] + '"]'); if (m) m.content = x[1]; });
 
-  var ld = { "@context": "https://schema.org", "@type": "Product", name: p.name, description: p.desc, image: new URL("assets/art/" + p.art + ".svg", root.location.href).href,
+  var ld = { "@context": "https://schema.org", "@type": "Product", name: p.name, description: p.desc, image: new URL(UI.art(p), root.location.href).href,
     category: cat ? cat.label : p.category, brand: { "@type": "Brand", name: "Moishes Butchery & Deli" },
     offers: { "@type": "Offer", priceCurrency: "ZAR", price: p.price.toFixed(2), availability: p.stock === false ? "https://schema.org/OutOfStock" : "https://schema.org/InStock", url: root.location.href } };
   var s = doc.createElement("script"); s.type = "application/ld+json"; s.textContent = JSON.stringify(ld); doc.head.appendChild(s);
@@ -30,7 +30,7 @@
   $("#crumb-name").textContent = p.name;
 
   var note = cfg.kashrutNotes[p.category];
-  host.innerHTML = '<div class="container pdp"><div class="pdp__media"><img src="' + UI.art(p) + '" alt="' + esc(p.name + " - illustration") + '" width="600" height="450"></div><div>' +
+  host.innerHTML = '<div class="container pdp"><div class="pdp__media"><img src="' + UI.art(p) + '" alt="' + esc(p.name) + '" width="600" height="450"></div><div>' +
     '<div class="pdp__badges">' + UI.badges(p) + (p.badge ? UI.flag(p).replace(" product-card__flag", "") : "") + (p.stock === false ? "" : "") + "</div>" +
     '<h1 class="pdp__title">' + esc(p.name) + '</h1><p class="pdp__price">' + UI.priceHTML(p) + "</p>" +
     '<p>' + esc(p.desc) + "</p>" + (p.pack ? '<p class="muted text-sm">Typical pack: ' + esc(p.pack) + "</p>" : "") +
