@@ -32,7 +32,7 @@ test('crawl: all internal links, assets, anchors and sprite refs resolve (every 
     for (const id of info.anchors) bad.push(`missing anchor #${id} on ${url}`);
     for (const l of info.links) {
       const u = new URL(l);
-      if (u.origin !== origin) { if (!/^https:\/\/(wa\.me|www\.google\.com|maps\.google|goo\.gl|www\.openstreetmap\.org|maps\.app\.goo\.gl)/.test(l)) bad.push(`unexpected external ${l} on ${url}`); continue; }
+      if (u.origin !== origin) { if (!/^https:\/\/(wa\.me|www\.google\.com|maps\.google|goo\.gl|www\.openstreetmap\.org|maps\.app\.goo\.gl|commons\.wikimedia\.org\/wiki\/File:)/.test(l)) bad.push(`unexpected external ${l} on ${url}`); continue; }
       await head(u.pathname, url);
       if (u.hash && u.pathname.endsWith('.html')) { /* anchor on other page verified below */ }
       if (u.pathname.endsWith('.html') && !seen.has(u.pathname + u.search)) queue.push(u.pathname + u.search);

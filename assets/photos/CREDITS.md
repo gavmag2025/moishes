@@ -10,7 +10,6 @@ Product photographs on this demo site are from Wikimedia Commons, used under the
 | brisket | Brisket topped with fat - Decmeber 2023 - Sarah Stierch.jpg | Missvain | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Brisket_topped_with_fat_-_Decmeber_2023_-_Sarah_Stierch.jpg |
 | burger | Hamburger - Patty and Bun, London.jpg | Ewan Munro from London, UK | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Hamburger_-_Patty_and_Bun,_London.jpg |
 | cake-layer | 5 layer rainbow cake slice.jpg | Aditijuneja2023 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:5_layer_rainbow_cake_slice.jpg |
-| catering-platter | Bosnian meat platter.JPG | BiHVolim | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Bosnian_meat_platter.JPG |
 | challah | Challah Bread Six Braid 1.JPG | Aviv Hod | CC BY 3.0 | https://commons.wikimedia.org/wiki/File:Challah_Bread_Six_Braid_1.JPG |
 | chicken-pieces | Liat Portal for Foodie Disorder - Chicken with potatoes, onion, garlic, and rosemary before roasting.jpg | HaJunkiyada | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Liat_Portal_for_Foodie_Disorder_-_Chicken_with_potatoes,_onion,_garlic,_and_rosemary_before_roasting.jpg |
 | chicken-soup | Matzo ball soup - Bird and the Bottle - Stierch 2018.jpg | Missvain | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Matzo_ball_soup_-_Bird_and_the_Bottle_-_Stierch_2018.jpg |

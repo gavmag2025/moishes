@@ -5,7 +5,7 @@
   var page = (doc.body && doc.body.getAttribute("data-page")) || "";
 
   function icon(id, cls) { return '<svg class="icon' + (cls ? " " + cls : "") + '" aria-hidden="true"><use href="assets/icons.svg#' + id + '"/></svg>'; }
-  var PHOTOS = "beef-ribs biltong boerewors brisket burger cake-layer catering-platter challah chicken-pieces chicken-soup chicken-whole chicken-wings chocolate-cake cholent droewors hummus kugel lamb-chops lamb-ribs mince pastrami roast-beef roast-chicken rolls rugelach salad salami sausage schnitzel shabbos-box steak stew turkey".split(" ");
+  var PHOTOS = "beef-ribs biltong boerewors brisket burger cake-layer challah chicken-pieces chicken-soup chicken-whole chicken-wings chocolate-cake cholent droewors hummus kugel lamb-chops lamb-ribs mince pastrami roast-beef roast-chicken rolls rugelach salad salami sausage schnitzel shabbos-box steak stew turkey".split(" ");
   function art(p) { var k = p.art || "generic-meat"; return PHOTOS.indexOf(k) < 0 ? "assets/art/" + encodeURIComponent(k) + ".svg" : "assets/photos/" + encodeURIComponent(k) + ".jpg"; }
   root.MoishesPhotoKeys = PHOTOS;
   /* Photos fall back to the original SVG illustration if a file is missing (error events do not bubble, so capture). */

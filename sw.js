@@ -1,6 +1,6 @@
 /* sw.js - small offline shell. Bump VERSION on every deploy to bust old caches.
    Strategy: same-origin GETs are network-first (fresh when online), falling back to cache offline. Cross-origin (fonts) untouched. */
-var VERSION = "moishes-v2-photos-2026-10";
+var VERSION = "moishes-v2-photos-2026-10b";
 var SHELL = ["./", "index.html", "shop.html", "product.html", "cart.html", "checkout.html", "confirmation.html", "about.html", "kashrut.html", "contact.html", "orders.html", "404.html",
   "css/tokens.css", "css/base.css", "css/components.css", "css/pages.css", "css/engineer.css",
   "data/config.js", "data/products.js", "js/format.js", "js/catalog.js", "js/rules.js", "js/store.js", "js/ui.js", "js/content.js", "js/shop.js", "js/product.js", "js/cart.js", "js/checkout.js", "js/confirmation.js", "js/orders.js",
