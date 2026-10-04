@@ -1,0 +1,60 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Run node unit tests (tolerant if none exist)
+        run: |
+          set -e
+          files=$(ls tests/*.test.js tests/unit/*.test.js tests/*.unit.js 2>/dev/null || true)
+          if [ -z "$files" ]; then
+            echo "No node unit tests found - skipping."
+            exit 0
+          fi
+          echo "Running: $files"
+          node --test $files
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Assemble static site (exclude tests, docs, node_modules, .git)
+        run: |
+          mkdir -p _site
+          rsync -a \
+            --exclude='.git' --exclude='.github' --exclude='_site' \
+            --exclude='node_modules' --exclude='tests' --exclude='docs' \
+            --exclude='README.md' --exclude='package*.json' \
+            --exclude='playwright.config.js' --exclude='test-results' \
+            ./ _site/
+          touch _site/.nojekyll
+          ls -la _site
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v4
