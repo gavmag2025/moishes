@@ -21,3 +21,10 @@
   .confirm, .panel { box-shadow: none; border: 1px solid #999; break-inside: avoid; }
   a { color: inherit; text-decoration: none; }
 }
+#c-title:focus { outline: none; }
+.confirm .summary__lines { margin-bottom: var(--s-3); }
+.confirm .alert { text-align: left; margin-block: var(--s-3); }
+.toolbar > * { min-width: 0; }
+.toolbar .cluster { flex-wrap: nowrap; }
+.toolbar .cluster > span { flex: none; }
+html, body { overflow-x: clip; }

@@ -151,9 +151,9 @@
     } else if (b.kind === "passed") {
       txt = "<strong>Erev Shabbos:</strong> cut-off has passed" + (b.next ? ". Next available: " + F.dateShort(b.next) : "");
     } else if (b.kind === "soon") {
-      txt = "<strong>Erev Shabbos:</strong> " + esc(b.label.replace(/^Order by /, "order by ")) + " (" + b.hoursLeft + "h " + b.minsLeft + "m left)";
+      txt = "<strong>" + esc(b.label) + "</strong> (" + b.hoursLeft + "h " + b.minsLeft + "m left)";
     } else {
-      txt = "<strong>Erev Shabbos:</strong> " + esc(b.label.replace(/^Order by /, "order by "));
+      txt = "<strong>" + esc(b.label) + "</strong>";
     }
     return '<div class="' + cls + '" role="region" aria-label="Shabbos ordering notice" data-banner="' + b.kind + '"><div class="announce__inner"><p class="announce__text">' + txt + " &middot; " + he + "</p></div></div>" +
       (cfg.pesach ? '<div class="announce" role="region" aria-label="Pesach mode"><div class="announce__inner"><p class="announce__text"><strong>Pesach mode:</strong> showing Pesach products only</p></div></div>' : "");
