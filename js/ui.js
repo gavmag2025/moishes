@@ -70,7 +70,7 @@
   function keepFocus(fn) {
     var a = doc.activeElement, fk = a && a.getAttribute && a.getAttribute("data-fk"), pos = a && a.selectionStart;
     fn();
-    if (fk) { var n = $('[data-fk="' + fk.replace(/"/g, "") + '"]'); if (n && !n.disabled) { n.focus(); } else if (fk.indexOf(":dec") > 0 || fk.indexOf(":inc") > 0 || fk.indexOf(":in") > 0) { /* control vanished (removed) */ } }
+    if (fk) { var n = $('[data-fk="' + fk.replace(/"/g, "") + '"]'); if (n && !n.disabled) { n.focus(); } else if (fk.indexOf(":dec") > 0 || fk.indexOf(":inc") > 0 || fk.indexOf(":in") > 0) { /* control vanished: a card stepper dropping to 0 gives way to its Add button, so focus that */ var m = /^(card:.+):(dec|inc|in)$/.exec(fk), ab = m && $('[data-fk="' + m[1].replace(/"/g, "") + ':add"]'); if (ab) ab.focus(); } }
   }
 
   /* ---------- toasts ---------- */
@@ -104,7 +104,13 @@
   doc.addEventListener("click", function (e) {
     var t = e.target.closest ? e.target.closest("[data-add],[data-qty-id][data-dir],[data-remove],[data-open-cart]") : null;
     if (!t) return;
-    if (t.hasAttribute("data-add")) { addToCart(t.getAttribute("data-add")); return; }
+    if (t.hasAttribute("data-add")) {
+      /* the Add button is replaced by a stepper: move keyboard focus to its "+" so focus is not dropped to <body> */
+      var hadFocus = doc.activeElement === t, fk = t.getAttribute("data-fk") || "";
+      addToCart(t.getAttribute("data-add"));
+      if (hadFocus && fk) { var inc = $('[data-fk="' + fk.replace(/:add$/, ":inc").replace(/"/g, "") + '"]'); if (inc) inc.focus(); }
+      return;
+    }
     if (t.hasAttribute("data-open-cart")) { openDrawer(t); return; }
     if (t.hasAttribute("data-remove")) {
       var rid = t.getAttribute("data-remove"), rp = C.get(rid), rq = S.qtyOf(rid);
