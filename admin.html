@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en-ZA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin (demo) - Moishes Kosher Butchery &amp; Deli</title>
+<meta name="description" content="Demo admin page.">
+<meta name="robots" content="noindex,nofollow">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#6b1d2a">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Moishes Kosher Butchery &amp; Deli">
+<meta property="og:title" content="Admin (demo) - Moishes Kosher Butchery &amp; Deli">
+<meta property="og:description" content="Demo admin page.">
+<meta property="og:image" content="assets/art/shabbos-box.svg">
+<meta property="og:locale" content="en_ZA">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Frank+Ruhl+Libre:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/pages.css">
+<link rel="stylesheet" href="css/engineer.css">
+
+</head>
+<body data-page="admin">
+<a class="skip-link" href="#main">Skip to content</a>
+<div data-site-header></div>
+<main id="main">
+<section class="page-head"><div class="container"><nav aria-label="Breadcrumb"><ol class="breadcrumb"><li><a href="index.html">Home</a></li><li aria-current="page">Admin</li></ol></nav><h1>Orders admin (demo)</h1></div></section>
+<div class="container" style="padding-block:var(--s-5) var(--s-7)"><div class="alert alert--danger" role="note"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#alert"/></svg><p><strong>DEMO ONLY - no real security.</strong> This page has no login and only shows orders saved in <em>this browser's</em> localStorage. A real shop needs a server, authentication and a database.</p></div>
+<div class="toolbar"><div class="chips" role="group" aria-label="Filter by status" id="admin-filters"></div><div class="cluster"><button class="btn btn--secondary btn--sm" type="button" id="admin-export">Export CSV</button><button class="btn btn--ghost btn--sm" type="button" id="admin-clear">Delete all demo orders</button></div></div>
+<div id="admin-root"></div></div>
+</main>
+<div data-site-footer></div>
+<noscript><p class="container" style="padding:1rem 0">This shop needs JavaScript to show products and your basket. You can still call us on 011 485 4513 or message us on WhatsApp.</p></noscript>
+<script src="data/config.js" defer></script>
+<script src="data/products.js" defer></script>
+<script src="js/format.js" defer></script>
+<script src="js/catalog.js" defer></script>
+<script src="js/rules.js" defer></script>
+<script src="js/store.js" defer></script>
+<script src="js/ui.js" defer></script>
+<script src="js/admin.js" defer></script>
+</body>
+</html>

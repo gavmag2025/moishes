@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /admin.html
+Disallow: /cart.html
+Disallow: /checkout.html
+Disallow: /confirmation.html
+Disallow: /orders.html
+
+# Replace the host below with the deployed GitHub Pages URL.
+Sitemap: https://example.github.io/moishes/sitemap.xml

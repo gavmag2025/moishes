@@ -1,0 +1,23 @@
+/* engineer.css - tiny additions on top of the design system (loaded last). */
+.field__error { display: none; }
+.field.has-error .field__error { display: block; }
+.alert[hidden], [hidden] { display: none !important; }
+#error-summary ul { margin: .5rem 0 0; padding-left: 1.25rem; }
+#error-summary a { color: inherit; font-weight: 700; }
+#error-summary:focus { outline: 3px solid var(--focus); outline-offset: 2px; }
+.cart-line__title a { color: inherit; text-decoration: none; }
+.cart-line__title a:hover { text-decoration: underline; }
+.cart-table a { color: inherit; }
+.confirm__ref { user-select: all; }
+.confirm .summary-list { text-align: left; }
+.confirm .totals, .confirm .summary__lines { text-align: left; }
+.confirm__summary { text-align: left; }
+.cluster .chips { margin-inline: 0; padding-inline: 0; }
+@media (max-width: 47.99em) { .cluster .chips { flex: 1; min-width: 0; } }
+
+@media print {
+  .announce, .site-header, .mobile-menu, .site-footer, .drawer, .toast-region, .skip-link, .confirm__actions, .sticky-cta, .alert--info { display: none !important; }
+  body { background: #fff; color: #000; }
+  .confirm, .panel { box-shadow: none; border: 1px solid #999; break-inside: avoid; }
+  a { color: inherit; text-decoration: none; }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Moishes Kosher Butchery & Deli (demo)",
+  "short_name": "Moishes",
+  "description": "Demo online shop for a Mehadrin kosher butchery and deli in Glenhazel, Johannesburg.",
+  "start_url": "index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#fbf6ec",
+  "theme_color": "#6b1d2a",
+  "lang": "en-ZA",
+  "icons": [{ "src": "assets/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
+}
