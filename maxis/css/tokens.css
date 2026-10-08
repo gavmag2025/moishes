@@ -1,0 +1,98 @@
+/* Maxi's Discount Kosher Butchery - design tokens. Butcher-paper cream, signal red, price-tag yellow, ink black. Light only (bold flyer look). */
+:root {
+  /* brand */
+  --burgundy-900: #4A0B08;
+  --burgundy-800: #14110F;
+  --burgundy-700: #C81E17;   /* primary: signal red */
+  --burgundy-600: #A8140E;
+  --burgundy-500: #E23A2E;
+  --burgundy-100: #FFE0DB;
+  --brass-700: #6B4E00;      /* brass as TEXT on cream (AA) */
+  --brass-600: #8F6A00;
+  --brass-500: #F2B705;      /* brass as DECORATION */
+  --brass-400: #FFD21F;
+  --brass-200: #FFEFA8;
+  --herb-700: #14573A;
+  --herb-600: #1B6B43;
+  --herb-100: #E3EFDC;
+  --char-900: #14110F;
+  --char-700: #3A332E;
+  --char-500: #6B625B;
+
+  /* semantic - light */
+  --bg: #F6EFE0;
+  --bg-alt: #FFE98A;
+  --surface: #FFFFFF;
+  --surface-2: #F1E7CF;
+  --ink: var(--char-900);
+  --ink-2: #4D443D;          /* 7.0:1 on --bg */
+  --ink-inverse: #FFF8EA;
+  --line: #D8CBAE;
+  --line-strong: #14110F;
+  --primary: var(--burgundy-700);
+  --primary-hover: var(--burgundy-600);
+  --primary-ink: #FFFFFF;
+  --primary-text: #B3150F; /* primary used as TEXT colour */
+  --primary-soft: var(--burgundy-100);
+  --accent: var(--brass-500);
+  --accent-ink: #6B4E00;
+  --accent-soft: var(--brass-200);
+  --pareve: var(--herb-600);
+  --pareve-bg: var(--herb-100);
+  --meat: var(--burgundy-700);
+  --meat-bg: var(--burgundy-100);
+  --success: #2F6B3A;
+  --warn-bg: #FBE9BE;
+  --warn-ink: #5C3F06;
+  --danger: #A3202E;
+  --focus: #1F5FBF;
+  --overlay: rgba(36, 22, 24, .55);
+  --announce-bg: #FFD21F;
+  --announce-ink: #14110F;
+  --footer-bg: #14110F;
+  --footer-ink: #F6EFE0;
+  --footer-ink-2: #BDB3A3;
+  --skeleton-a: #E9DDC2;
+  --skeleton-b: #F6EFE0;
+
+  /* geometric border motif (fine lattice, neutral) */
+  --motif: repeating-linear-gradient(135deg,#14110F 0 14px,#FFD21F 14px 28px);
+  --pattern: none;
+
+  /* type */
+  --font-display: "Anton", "Impact", "Haettenschweiler", "Arial Narrow Bold", sans-serif;
+  --font-body: "Barlow", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-hebrew: "Frank Ruhl Libre", "David", "Times New Roman", serif;
+  --fs-xs: .8125rem;  --fs-sm: .9375rem;  --fs-base: 1.0625rem;
+  --fs-md: 1.1875rem; --fs-lg: clamp(1.3rem, 1.1rem + 1vw, 1.65rem);
+  --fs-xl: clamp(1.7rem, 1.3rem + 2vw, 2.4rem);
+  --fs-2xl: clamp(2.2rem, 1.5rem + 3.6vw, 3.8rem);
+  --lh-tight: 1.15; --lh-body: 1.55;
+
+  /* space (4px base) */
+  --s-1: .25rem; --s-2: .5rem; --s-3: .75rem; --s-4: 1rem; --s-5: 1.5rem;
+  --s-6: 2rem; --s-7: 3rem; --s-8: 4.5rem;
+  --gutter: 1rem;
+  --container: 76rem;
+
+  /* shape + depth */
+  --r-sm: 4px; --r-md: 6px; --r-lg: 10px; --r-pill: 999px;
+  --shadow-1: 3px 3px 0 #14110F;
+  --shadow-2: 6px 6px 0 #14110F;
+  --shadow-3: 8px 8px 0 #14110F;
+
+  /* motion */
+  --ease: cubic-bezier(.2, .7, .2, 1);
+  --t-fast: 140ms; --t-med: 260ms;
+
+  /* sizing */
+  --tap: 44px;
+  --header-h: 64px;
+  --z-header: 50; --z-drawer: 80; --z-toast: 100;
+
+  color-scheme: light;
+}
+
+@media (min-width: 40em) { :root { --gutter: 1.5rem; --header-h: 72px; } }
+@media (min-width: 64em) { :root { --gutter: 2rem; } }
+

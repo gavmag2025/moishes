@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en-ZA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Checkout - Maxi's Discount Kosher Butchery</title>
+<meta name="description" content="Checkout: choose delivery or collection, pick a slot and place your order.">
+<meta name="robots" content="noindex,follow">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#14110F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Maxi's Discount Kosher Butchery">
+<meta property="og:title" content="Checkout - Maxi's Discount Kosher Butchery">
+<meta property="og:description" content="Checkout: choose delivery or collection, pick a slot and place your order.">
+<meta property="og:image" content="assets/photos/shabbos-box.jpg">
+<meta property="og:locale" content="en_ZA">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600;700&family=Frank+Ruhl+Libre:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/pages.css">
+<link rel="stylesheet" href="css/engineer.css">
+<link rel="stylesheet" href="css/maxis.css">
+
+</head>
+<body data-page="checkout">
+<a class="skip-link" href="#main">Skip to content</a>
+<div data-site-header></div>
+<main id="main" class="has-sticky-cta">
+
+<section class="page-head"><div class="container"><nav aria-label="Breadcrumb"><ol class="breadcrumb"><li><a href="index.html">Home</a></li><li><a href="cart.html">Basket</a></li><li aria-current="page">Checkout</li></ol></nav><h1>Checkout</h1><p>Choose delivery or collection, pick a time and place your order. No payment is taken on this site.</p></div></section>
+<div class="container"><ol class="steps" aria-label="Checkout progress" style="margin-top:var(--s-5)"><li class="step is-done">Basket</li><li class="step is-current" aria-current="step">Details</li><li class="step">Confirm</li></ol></div>
+<div class="container"><div class="empty" id="checkout-empty" hidden><img class="empty__art" src="assets/art/generic-meat.svg" alt=""><h2 class="empty__title">Your basket is empty</h2><p class="empty__text">Add something to your basket before checking out.</p><a class="btn btn--primary" href="shop.html">Shop now</a></div></div>
+<div class="container checkout-layout">
+<form id="checkout" class="checkout-main" novalidate autocomplete="on">
+  <div id="error-summary" class="alert alert--danger" role="alert" tabindex="-1" hidden></div>
+  <section class="panel"><h2 class="panel__title"><span class="num-dot">1</span>Your details</h2>
+    <div class="form-grid form-grid--2">
+      <div class="field"><label class="field__label" for="name">Full name <span class="req">*</span></label><input id="name" class="input" autocomplete="name" required><p class="field__error" id="name-err"></p></div>
+      <div class="field"><label class="field__label" for="phone">Mobile / phone <span class="req">*</span></label><input id="phone" class="input" type="tel" inputmode="tel" autocomplete="tel" placeholder="082 123 4567" required aria-describedby="phone-hint"><p class="field__hint" id="phone-hint">South African number, e.g. 082 123 4567 or +27 82 123 4567</p><p class="field__error" id="phone-err"></p></div>
+      <div class="field span-2"><label class="field__label" for="email">Email (optional)</label><input id="email" class="input" type="email" autocomplete="email"><p class="field__error" id="email-err"></p></div>
+    </div></section>
+  <section class="panel"><h2 class="panel__title"><span class="num-dot">2</span>Delivery or collection</h2>
+    <fieldset class="choice-list"><legend class="visually-hidden">Fulfilment</legend>
+      <label class="choice"><input class="choice__input" type="radio" name="fulfilment" value="delivery" checked><span class="choice__box"><span class="choice__title">Delivery</span><span class="choice__desc">To your door, by suburb zone</span></span></label>
+      <label class="choice"><input class="choice__input" type="radio" name="fulfilment" value="collection"><span class="choice__box"><span class="choice__title">Collection</span><span class="choice__desc">Free, from the shop in Sandringham</span><span class="choice__aside">Free</span></span></label></fieldset>
+    <div id="delivery-fields" class="form-grid form-grid--2" style="margin-top:var(--s-4)">
+      <div class="field span-2"><label class="field__label" for="street">Street address <span class="req">*</span></label><input id="street" class="input" autocomplete="street-address" placeholder="12 Example Road, complex / unit"><p class="field__error" id="street-err"></p></div>
+      <div class="field span-2"><label class="field__label" for="zone">Suburb / delivery zone <span class="req">*</span></label><select id="zone" class="select" aria-describedby="zone-hint"></select><p class="field__hint" id="zone-hint"></p><p class="field__error" id="zone-err"></p></div>
+      <div class="field span-2"><label class="field__label" for="instructions">Delivery instructions (optional)</label><input id="instructions" class="input" maxlength="200" placeholder="Gate code, leave with security..."></div>
+    </div>
+    <div id="collect-note" hidden class="alert alert--info" style="margin-top:var(--s-4)"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#pin"/></svg><p>Collect from 74 George Avenue, Sandringham, Johannesburg.</p></div></section>
+  <section class="panel"><h2 class="panel__title"><span class="num-dot">3</span>Date &amp; time</h2>
+    <div class="field" id="slot-field"><div class="slot-picker">
+      <div class="day-chips" role="group" aria-label="Day" id="day-chips"></div>
+      <p class="field__hint" id="day-note"></p>
+      <fieldset class="slot-fieldset"><legend class="visually-hidden" id="slot-legend">Time slot</legend><div class="slot-grid" id="slot-grid"></div></fieldset>
+      <p class="field__hint" id="mode-note"></p>
+      <p class="text-sm muted">No orders or delivery on Shabbos or Yom Tov. Friday orders must be placed by 12:00 on Thursday. Times are South African time (SAST).</p>
+      <p class="field__error" id="slot-err"></p></div></div></section>
+  <section class="panel"><h2 class="panel__title"><span class="num-dot">4</span>Payment</h2>
+    <div class="field"><fieldset class="choice-list" id="pay-fieldset"><legend class="visually-hidden">Payment method</legend><div id="pay-list" class="choice-list"></div></fieldset><p class="field__error" id="pay-err"></p></div>
+    <p class="text-sm muted">No payment is taken on this website. EFT details and instructions are shown after you place your order.</p></section>
+  <section class="panel"><h2 class="panel__title"><span class="num-dot">5</span>Order notes</h2>
+    <div class="field"><label class="field__label" for="notes">Anything we should know? (optional)</label><textarea id="notes" class="textarea" rows="3" maxlength="500" placeholder="e.g. please cut the brisket in two, kosher for Pesach only..."></textarea></div>
+    <div class="field" style="margin-top:var(--s-3)"><label class="check"><input type="checkbox" id="agree" aria-describedby="agree-err"> <span>I understand weighted items are cut to order and the final price is adjusted to the actual weight. <span class="req">*</span></span></label><p class="field__error" id="agree-err"></p></div>
+    <p class="text-sm muted">Your details are stored in this browser only (demo, no server). Sending the order on WhatsApp shares it with the shop.</p></section>
+  <div class="alert alert--info" id="weight-note" hidden><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#info"/></svg><p>Weighted items are cut to order; final price is adjusted to the actual weight.</p></div>
+</form>
+<aside class="summary" id="summary" aria-label="Order summary"><h2>Order summary</h2><ul class="summary__lines" id="summary-lines"></ul><dl class="totals" id="summary-totals"></dl><p class="text-sm muted" id="vat-note"></p>
+  <div class="alert alert--danger" id="min-alert" role="status" hidden><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#alert"/></svg><p></p></div>
+  <button class="btn btn--primary btn--block btn--lg" type="submit" form="checkout">Place order</button>
+  <p class="text-sm muted">Prefer WhatsApp? <a id="wa-link" href="#" rel="noopener">Message us</a> and we will help.</p></aside></div>
+<div class="sticky-cta" id="sticky"><div class="sticky-cta__total">Total<strong id="sticky-total"></strong></div><button class="btn btn--primary" type="submit" form="checkout">Place order</button></div>
+</main>
+<div data-site-footer></div>
+<noscript><p class="container" style="padding:1rem 0">This shop needs JavaScript to show products and your basket. You can still call us on 011 485 1485 or message us on WhatsApp.</p></noscript>
+<script src="data/config.js" defer></script>
+<script src="data/products.js" defer></script>
+<script src="js/format.js" defer></script>
+<script src="js/catalog.js" defer></script>
+<script src="js/rules.js" defer></script>
+<script src="js/store.js" defer></script>
+<script src="js/ui.js" defer></script>
+<script src="js/checkout.js" defer></script>
+<script src="vendor/gsap.min.js" defer></script>
+<script src="vendor/ScrollTrigger.min.js" defer></script>
+<script src="vendor/SplitText.min.js" defer></script>
+<script src="vendor/lenis.min.js" defer></script>
+<script src="js/fx.js" defer></script>
+</body>
+</html>
